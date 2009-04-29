@@ -11,8 +11,6 @@ class Converter
   def to_ra(num)
     if num < 0
       deg = deg + 360
-    elsif num > 360
-      return "input should not exceed 360!"
     end
 
     hour = (num/15).to_i()
@@ -31,9 +29,7 @@ class Converter
       sign = ""
     end
 
-    if num > 180
-      return "input should not exceed 180!"
-    elsif num > 90
+    if num > 90
       # exceeds 90, so sign is negative
       num -= 90
       sign = "-"
